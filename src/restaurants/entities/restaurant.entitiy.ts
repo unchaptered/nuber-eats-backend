@@ -1,6 +1,8 @@
 import { Field, ObjectType } from "@nestjs/graphql";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @ObjectType()
+@Entity()
 export class Restaurant {
     /* @ObjectType() 은 Nest 에서 사용할 Object 의 타입을 선언해두는 개념이다.
         클래스의 멤버 변수와 같이, Field 로 이루어진 값들을 가지고 있다.
@@ -20,15 +22,27 @@ export class Restaurant {
         다음 Commit 에서는 ArgsType 을 알아보겠다.
     */
 
+    @Field(()=>Number)
+    @PrimaryColumn()
+    id: number;
+
     @Field(()=>String)
+    @Column()
     name: string;
 
     @Field(()=>Boolean)
+    @Column()
     isVegan: boolean;
 
     @Field(()=>String)
+    @Column()
     address: string;
 
     @Field(()=>String)
+    @Column()
     ownerName: string;
+
+    @Field(()=>String)
+    @Column()
+    categoriName: string;
 }
