@@ -1,4 +1,5 @@
 import { Field, ArgsType } from "@nestjs/graphql";
+import { IsBoolean, IsString, Length } from "class-validator";
 
 /* GraphQL 은 Objective Args 를 두 가지 타입으로 받아들인다.
     1. InputType
@@ -11,14 +12,19 @@ import { Field, ArgsType } from "@nestjs/graphql";
 @ArgsType()
 export class CreateRestaurantDto {
     @Field(()=>String )
+    @IsString()
+    @Length(5,10)
     name: string;
 
     @Field(()=>Boolean )
+    @IsBoolean()
     isVegan: boolean;
 
     @Field(()=>String )
+    @IsString()
     address: string;
 
     @Field(()=> String )
+    @IsString()
     ownerName:string;
 }
