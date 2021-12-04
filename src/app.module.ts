@@ -6,6 +6,8 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 // Import JS Module without TS
 import * as Joi from "joi";
 
+import { Restaurant } from "./restaurants/entities/restaurant.entitiy";
+
 import { RestaurantsModule } from "./restaurants/restaurants.module";
 
 
@@ -16,7 +18,7 @@ import { RestaurantsModule } from "./restaurants/restaurants.module";
       envFilePath: process.env.NODE_ENV === "dev" ? ".env.dev" : ".env.test",
       ignoreEnvFile: process.env.NODE_ENV === "prod",
       validationSchema: Joi.object({
-        NODE_ENV: Joi.string().valid('dev','prod'),
+        NODE_ENV: Joi.string().valid("dev","prod"),
         DB_HOST: Joi.string().required(),
         DB_PORT: Joi.string().required(),
         DB_USERNAME: Joi.string().required(),
@@ -31,8 +33,9 @@ import { RestaurantsModule } from "./restaurants/restaurants.module";
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      synchronize: true,
+      synchronize: process.env.NODE_ENV !== "prod",
       logging: true,
+      entities: [Restaurant],
       /* password 는 postgre, db, ROLE 세 개가 있는데, 그 중 ROLE 의 비밀번호이다.
       */
     }),
