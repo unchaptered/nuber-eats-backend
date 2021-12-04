@@ -11,20 +11,20 @@ import { IsBoolean, IsString, Length } from "class-validator";
 */
 @ArgsType()
 export class CreateRestaurantDto {
-    @Field(()=>String )
+    @Field(()=>String)
     @IsString()
     @Length(5,10)
     name: string;
 
-    @Field(()=>Boolean )
+    @Field(()=>Boolean)
     @IsBoolean()
     isVegan: boolean;
 
-    @Field(()=>String )
+    @Field(()=>String)
     @IsString()
     address: string;
 
-    @Field(()=> String )
+    @Field(()=> String)
     @IsString()
     ownerName:string;
 }
