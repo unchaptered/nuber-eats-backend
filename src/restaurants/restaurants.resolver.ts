@@ -3,6 +3,7 @@ import { Args, Query, Mutation, Resolver } from "@nestjs/graphql";
 import { Restaurant } from "./entities/restaurant.entitiy";
 import { CreateRestaurantDto } from "./dtos/create-restaurant.dto";
 import { RestaurantService } from "./restaurant.service";
+import { UpdateRestaurantDto } from "./dtos/update-restaurant.dto";
 
 @Resolver(()=>Restaurant)
 export class RestaurantResolver {
@@ -25,5 +26,18 @@ export class RestaurantResolver {
             console.log(e);
             return false;
         }
+    }
+    @Mutation(()=>Boolean)
+    async updateRestaurant(
+        /*Args 입력받는 방법 2 가지
+            data:somthingDto 와 id:number 를 동시에 보내는 방법.
+                @Args("id") id:number,
+                @Args("input") data:UpdateRestaurantDto,
+            data:somthingDto 와 id:number 를 하나로 합쳐서 data:objectiveDto 를 새로 만들어 보내는 방법
+        */
+        @Args("id") id:number,
+        @Args("input") data:UpdateRestaurantDto
+    ) {
+        return true;
     }
 }

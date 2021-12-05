@@ -1,0 +1,29 @@
+[33m9183412[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: commit: #3.6 Optional Types and Columns
+[33mccaf0f8[m HEAD@{1}: commit: #3.5 Mapped Types 2/2
+[33mf8c3992[m HEAD@{2}: commit: #3.5 Mapped Types 1/2
+[33mabbb803[m HEAD@{3}: commit: #3.4 Create Restaurant
+[33mdad6e86[m HEAD@{4}: commit: #3.1 ~ #3.2 Injecting The Repository
+[33mfb4a392[m HEAD@{5}: pull --progress origin: Merge made by the 'recursive' strategy.
+[33m56483fb[m HEAD@{6}: commit: #3.0 Our First Entity
+[33m024fa04[m HEAD@{7}: reset: moving to HEAD~2
+[33md732a55[m HEAD@{8}: reset: moving to d732a55
+[33md732a55[m HEAD@{9}: reset: moving to HEAD~0
+[33md732a55[m HEAD@{10}: commit: #3.0 Our First Entity
+[33m3184f80[m HEAD@{11}: pull --progress origin: Merge made by the 'recursive' strategy.
+[33m024fa04[m HEAD@{12}: commit: #2.6 Validating ConfigService
+[33m85df5fa[m HEAD@{13}: reset: moving to HEAD^~0
+[33m8d96185[m HEAD@{14}: commit: #2.6 Validating ConfigService
+[33m85df5fa[m HEAD@{15}: commit: #2.0 ~ #2.5 DB, ORM, pg, Config, Cross-env
+[33m903686c[m HEAD@{16}: commit: #1.5 Validating ArgsTypes
+[33m8d55a79[m HEAD@{17}: commit: #1.4 Args with InputTypes
+[33m38b6bce[m HEAD@{18}: reset: moving to HEAD@{4}
+[33m2c42526[m HEAD@{19}: reset: moving to HEAD~1
+[33m206fb3f[m HEAD@{20}: reset: moving to HEAD^~2
+[33meba2bcf[m HEAD@{21}: reset: moving to HEAD^~1
+[33m93b14a8[m HEAD@{22}: commit: #1.4 Args without InputTypes
+[33m38b6bce[m HEAD@{23}: commit: #1.4 Args without InputTypes
+[33meba2bcf[m HEAD@{24}: commit: #1.3 Arguments
+[33m56acfb9[m HEAD@{25}: commit: #1.2 ObjectType (05:45)
+[33m3375213[m HEAD@{26}: commit: #1.1 Our First Resolver
+[33m206fb3f[m HEAD@{27}: commit: #1.0 Apollo Server Setup
+[33m2c42526[m HEAD@{28}: commit (initial): Initial commit
