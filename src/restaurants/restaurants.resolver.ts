@@ -37,7 +37,12 @@ export class RestaurantResolver {
                 @Args() updateRestaurantDto: UpdateRestaurantDto
         */
         @Args() updateRestaurantDto: UpdateRestaurantDto
-    ) {
-        return true;
+    ): Promise<boolean> {
+        try{
+            await this.restaurantService.updateRestaurant(updateRestaurantDto);
+        }catch(e){
+            console.log(e);
+            return false;
+        }
     }
 }
