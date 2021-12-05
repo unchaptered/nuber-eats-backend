@@ -34,9 +34,9 @@ export class RestaurantResolver {
                 @Args("id") id:number,
                 @Args("input") data:UpdateRestaurantDto,
             data:somthingDto 와 id:number 를 하나로 합쳐서 data:objectiveDto 를 새로 만들어 보내는 방법
+                @Args() updateRestaurantDto: UpdateRestaurantDto
         */
-        @Args("id") id:number,
-        @Args("input") data:UpdateRestaurantDto
+        @Args() updateRestaurantDto: UpdateRestaurantDto
     ) {
         return true;
     }
