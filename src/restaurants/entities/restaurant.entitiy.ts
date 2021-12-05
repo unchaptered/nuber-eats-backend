@@ -1,5 +1,6 @@
 import { Field, InputType, ObjectType } from "@nestjs/graphql";
 import { Entity, Column, PrimaryColumn } from "typeorm";
+import { IsBoolean, IsNumber, IsOptional, IsString, Length } from "class-validator";
 
 @InputType({isAbstract:true})
 @ObjectType()
@@ -25,25 +26,32 @@ export class Restaurant {
 
     @Field(()=>Number)
     @PrimaryColumn()
+    @IsNumber()
     id: number;
 
     @Field(()=>String)
     @Column()
+    @Length(5,10)
     name: string;
 
-    @Field(()=>Boolean)
-    @Column()
+    /*각 @Decorator 의 목적성 차이
+        @Field() 는 GraphQL Query 용
+        @Column() 은 PostgreSQL key 용
+        @IsOptional(), @IsBoolean() 은 Nest.JS Type 용
+    */
+    /*defaultValue 와 nullable 의 차이
+        { defaultValue: true } 는 매개변수로 입력되지 않았을 경우에 기본값을 의미한다.
+        { nullable: true } 는  값이 입력되지 않음(null) 상태를 허용할 것인가를 의미한다.
+   */
+    @Field(()=>Boolean, { nullable: true })
+    @Column({ nullable: true })
+    @IsOptional()
+    @IsBoolean()
     isVegan: boolean;
 
-    @Field(()=>String)
-    @Column()
+    @Field(()=>String, { defaultValue: "none" })
+    @Column({ default: "none" })
+    @IsOptional()
+    @IsString()
     address: string;
-
-    @Field(()=>String)
-    @Column()
-    ownerName: string;
-
-    @Field(()=>String)
-    @Column()
-    categoriName: string;
 }
