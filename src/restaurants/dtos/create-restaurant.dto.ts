@@ -12,7 +12,7 @@ import { Restaurant } from "../entities/restaurant.entitiy";
     즉, ArgsType 은 사실상 코드를 짧게 쓰기 위한 목적인 것이다.
 */
 @InputType()
-export class CreateRestaurantDto extends OmitType(Restaurant, ["id"], InputType){
+export class CreateRestaurantDto extends OmitType(Restaurant, ["id"]){
     /*  부모 클래스는 @ObjectType 이고
         자식 클래스는 @InputType 이다.
 

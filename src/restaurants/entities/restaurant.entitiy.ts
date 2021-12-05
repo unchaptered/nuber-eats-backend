@@ -1,6 +1,7 @@
 import { Field, InputType, ObjectType } from "@nestjs/graphql";
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
+@InputType({isAbstract:true})
 @ObjectType()
 @Entity()
 export class Restaurant {
