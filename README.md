@@ -2,11 +2,15 @@
 
 The Backend Server of Nuber Eats
 
-## User Model
+## User Entity
+
+> 공통된 요소들
 
 - id
 - createdAt
 - updatedAt
+
+> User 만의 요소들
 
 - email
 - password

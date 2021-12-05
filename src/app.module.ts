@@ -6,10 +6,15 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 // Import JS Module without TS
 import * as Joi from "joi";
 
-import { Restaurant } from "./restaurants/entities/restaurant.entitiy";
+// import { Restaurant } from "./restaurants/entities/restaurant.entitiy";
+// import { RestaurantsModule } from "./restaurants/restaurants.module";
 
-import { RestaurantsModule } from "./restaurants/restaurants.module";
+// Core Entity && Module
+import { CommonModule } from './common/common.module';
 
+// User Entity && Module
+import { User } from "./users/entities/user.entity";
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -35,7 +40,7 @@ import { RestaurantsModule } from "./restaurants/restaurants.module";
       database: process.env.DB_NAME,
       synchronize: process.env.NODE_ENV !== "prod",
       logging: true,
-      entities: [Restaurant],
+      entities: [User],
       /* password 는 postgre, db, ROLE 세 개가 있는데, 그 중 ROLE 의 비밀번호이다.
       */
     }),
@@ -47,7 +52,8 @@ import { RestaurantsModule } from "./restaurants/restaurants.module";
         join() 을 이용하면 지정한 경로 상에 생성한다.
       */
     }),
-    RestaurantsModule
+    UsersModule,
+    CommonModule
   ],
   controllers: [],
   providers: [],
